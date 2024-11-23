@@ -21,7 +21,7 @@ This is a solution to the [QR Code Component Challenge on Frontend Mentor](https
 
 ### Links
 
-- Solution URL: [My Source Code for the QR Code Component Challenge](https://github.com/thomasweitzel/frontend-mentor/qr-code-component)
+- Solution URL: [My Source Code for the QR Code Component Challenge](https://github.com/thomasweitzel/frontend-mentor/tree/main/qr-code-component)
 - Live Site URL: [My Live Solution for the QR Code Component Challenge](https://pureandroid.com/frontendmentor/qr-code-component/)
 
 ## My process
