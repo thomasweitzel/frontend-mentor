@@ -4,9 +4,7 @@ import info from "@/data";
 
 const App = () => {
   return (
-    <main>
-      <Card info={info} />
-    </main>
+    <Card info={info} />
   );
 };
 
