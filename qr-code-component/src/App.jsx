@@ -3,7 +3,11 @@ import Card from "@/components/card";
 import info from "@/data";
 
 const App = () => {
-  return <Card info={info} />;
+  return (
+    <main>
+      <Card info={info} />
+    </main>
+  );
 };
 
 export default App;
