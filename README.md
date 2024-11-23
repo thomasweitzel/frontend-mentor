@@ -2,6 +2,6 @@ My solutions for selected Frontend Mentor challenges only.
 
 I started the challenges on 2024-11-22 as a side project. My progress will be slow, but hopefully steady.
 
-# Implemented Solutions So far
+# Implemented Solutions So Far
 
-- [QR Code Component](./qr-code-component/dist)
+- [QR Code Component](https://thomasweitzel.github.io/frontend-mentor/qr-code-component/dist/)
