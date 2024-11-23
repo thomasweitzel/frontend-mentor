@@ -35,17 +35,19 @@ This is a solution to the [QR Code Component Challenge on Frontend Mentor](https
 
 ### What I learned
 
-I'm a backend software developer, mainly using Node.js (JavaScript), Rust, Java & Kotlin, and much SQL.
-Although I know a little HTML and CSS, have heard a lot about React and tried it once, I've never really gotten around using it much.
+As a backend developer primarily working with Node.js, Rust, Java, Kotlin, and SQL, this project was an opportunity to
+expand my skill set into frontend technologies. While I had some knowledge of HTML and CSS and had previously
+experimented with React, I hadn't delved deeply into using these tools together in a structured project.
 
-So I wanted to set up my own combination of tools for the Frontend Mentor challenges to learn HTML and CSS and all that other stuff necessary to have functioning projects.
+- React Setup: I decided to use React for all my Frontend Mentor projects to familiarize myself with building reusable
+  components.
+- Rsbuild vs. Vite: Instead of the popular Vite, I opted for Rsbuild, as it's Rust-powered and aligns with my interests.
+- Tailwind CSS: I found Tailwind CSS to be incredibly efficient for managing styles.
+- Custom Deployment: I set up my own server for live demos of solutions, learning more about deploying static frontend
+  projects.
 
-I will make every project a React project, instead of e.g. Vite I will use Rsbuild (because of Rust, it's just what I like).
-The CSS library will be Tailwind CSS.
-I want to use my own server for the live demo of my solutions.
-
-To make this all work, I had to learn everything that was necessary for that.
-But it will pay off because I can use that knowledge for all the future challenges - or so I think.
+By integrating these tools, I’ve created a workflow that I plan to refine and reuse for future challenges. This process
+has been a rewarding learning experience that will undoubtedly benefit future projects.
 
 ## Author
 
