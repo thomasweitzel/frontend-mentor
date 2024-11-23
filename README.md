@@ -6,4 +6,4 @@ I started the challenges on 2024-11-22 as a side project. My progress will be sl
 
 ## Implemented Solutions So far
 
-**NONE**
+- [QR Code Component](./qr-code-component)
