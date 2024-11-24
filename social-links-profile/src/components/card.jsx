@@ -6,7 +6,7 @@ const Card = ({ info }) => {
       <div className="flex flex-col items-center sm:pt-6 md:pt-10">
         <img src={avatar} alt={name} className="h-[88px] w-[88px] flex-none rounded-full" />
       </div>
-      <h1 className="text-[22px] font-bold sm:mt-6 md:mt-8">{name}</h1>
+      <h1 className="text-[22px] font-bold sm:mt-6 md:mt-8" id={"user-name"}>{name}</h1>
       <h2 className="text-[14px] font-bold text-green-social sm:mt-1 md:mt-2">
         {city}, {country}
       </h2>
