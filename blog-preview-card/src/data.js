@@ -3,7 +3,7 @@ import avatarImage from "../assets/images/image-avatar.webp";
 
 const info = {
   category: "Learning",
-  published: "Published 21 Dec 2023",
+  published: new Date("2023-12-21"),
   title: "HTML & CSS foundations",
   text: "These languages are the backbone of every website, defining structure, content, and presentation",
   image: illustrationImage,
@@ -11,5 +11,7 @@ const info = {
   avatar: avatarImage,
   name: "Greg Hooper",
 };
+
+console.log(info.published)
 
 export default info;
