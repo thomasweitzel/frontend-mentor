@@ -7,12 +7,12 @@ Frontend Mentor challenges help you improve your coding skills by building reali
 ## Table of contents
 
 - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
-    - [Links](#links)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -54,3 +54,17 @@ Users should be able to:
 - Website - [Thomas Weitzel](https://weitzel.dev/)
 - Frontend Mentor - [@thomasweitzel](https://www.frontendmentor.io/profile/thomasweitzel)
 - BlueSky - [@weitzel.dev](https://bsky.app/profile/weitzel.dev)
+
+## Feedback
+
+I received a review from [Adriano](https://www.frontendmentor.io/profile/AdrianoEscarabote).
+I did not have the social media buttons in an unordered list, but as a collection of `<a>` elements in a `<div>`.
+He suggested doing this instead:
+
+> [...] consider using the &lt;ul> (unordered list) element  
+> to group related links. The &lt;ul> tag is ideal for  
+> representing collections, such as a list  
+> of social media links or navigation items.
+
+This is a better solution indeed.
+I have updated my code to reflect his suggestion.
