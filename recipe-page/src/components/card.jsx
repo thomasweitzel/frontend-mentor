@@ -11,7 +11,7 @@ const Card = ({ recipe }) => {
         </h1>
         <p className={"pt-6"}>{summary}</p>
         <section className={"mt-8 rounded-lg bg-rose-50 p-8"}>
-          <p className={"text-[20px] font-bold text-rose-800"}>{"Preparation time"}</p>
+          <h2 className={"text-[20px] font-bold text-rose-800"}>{"Preparation time"}</h2>
           <ul className={"mt-2 leading-8"}>
             {times.map((time, index) => (
               <li key={index} className={"relative pl-10 pt-2 leading-normal before:absolute before:left-2 before:text-xl before:text-rose-800 before:content-['•']"}>
