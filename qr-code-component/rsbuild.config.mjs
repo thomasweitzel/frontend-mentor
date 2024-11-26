@@ -15,7 +15,7 @@ export default defineConfig({
     },
   },
   output: {
-    assetPrefix: './'
+    assetPrefix: "./",
   },
   plugins: [pluginReact()],
   jsx: "react-jsx",

@@ -14,17 +14,17 @@ module.exports = {
         },
       },
       height: {
-        'card': '500px',
-        'image': '288px',
+        card: "500px",
+        image: "288px",
       },
       width: {
-        'card': '320px',
-        'image': '288px',
+        card: "320px",
+        image: "288px",
       },
       fontSize: {
-        'card-big': '22px',
-        'card-small': '15px',
-      }
+        "card-big": "22px",
+        "card-small": "15px",
+      },
     },
   },
   plugins: ["prettier-plugin-tailwindcss"],
