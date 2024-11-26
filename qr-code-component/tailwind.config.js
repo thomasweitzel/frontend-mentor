@@ -13,6 +13,18 @@ module.exports = {
           900: "#1f3251",
         },
       },
+      height: {
+        'card': '500px',
+        'image': '288px',
+      },
+      width: {
+        'card': '320px',
+        'image': '288px',
+      },
+      fontSize: {
+        'card-big': '22px',
+        'card-small': '15px',
+      }
     },
   },
   plugins: ["prettier-plugin-tailwindcss"],
