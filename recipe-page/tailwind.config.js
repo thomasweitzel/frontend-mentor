@@ -26,6 +26,10 @@ module.exports = {
         sm: "0px",
         md: "750px",
       },
+      width: {
+        mobile: "375px",
+        desktop: "736px",
+      },
     },
   },
   plugins: ["prettier-plugin-tailwindcss"],
