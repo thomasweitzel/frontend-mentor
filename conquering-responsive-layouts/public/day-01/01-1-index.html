@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conquering Responsive Layout</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+      }
+
+      .parent {
+          background-color: #23424a;
+          padding: 50px;
+          margin: 0 auto;
+          width: 80%;
+      }
+
+      .child {
+          background-color: #38cfd9;
+          /*
+           * Normally I wouldn't include a height, it's just to get us started.
+           */
+          height: 250px;
+      }
+  </style>
+</head>
+<body>
+<div class="parent">
+  <div class="child">
+  </div>
+</div>
+</body>
+</html>

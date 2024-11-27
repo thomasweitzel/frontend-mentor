@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conquering Responsive Layout</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 0;
+      }
+
+      .parent {
+          background-color: #23424a;
+          padding: 50px;
+          margin: 0 auto;
+          width: 80%;
+      }
+
+      .child {
+          background-color: #38cfd9;
+          /*
+           * Normally I wouldn't include a height, it's just to get us started.
+           */
+          width: 50%;
+          /*height: 250px;*/
+      }
+  </style>
+</head>
+<body>
+<div class="parent">
+  <div class="child">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Pellentesque euismod, nulla quis tincidunt dignissim,
+    tortor mauris tincidunt massa, vitae tincidunt tortor massa
+    quis risus. Pellentesque habitant morbi tristique senectus
+    et netus et malesuada fames ac turpis egestas.
+    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+    posuere cubilia curae.
+  </div>
+</div>
+</body>
+</html>
