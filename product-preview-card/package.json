@@ -1,0 +1,28 @@
+{
+  "name": "rsbuild-template",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview",
+    "css:watch": "npx tailwindcss -i ./src/App.css -o ./src/generated-styles.css --watch",
+    "css:build": "npx tailwindcss -i ./src/App.css -o ./src/generated-styles.css --minify",
+    "format:run": "npx prettier --plugin=prettier-plugin-tailwindcss --config .prettierrc --write .",
+    "format:check": "npx prettier --plugin=prettier-plugin-tailwindcss --config .prettierrc --check ."
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "date-fns": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.1.4",
+    "@rsbuild/plugin-react": "^1.0.7",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.15"
+  }
+}
