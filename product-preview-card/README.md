@@ -15,8 +15,6 @@ Frontend Mentor challenges help you improve your coding skills by building reali
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -46,7 +44,7 @@ Users should be able to:
 
 ### What I learned
 
-- Correct handling of breakpoints for a <something>-first approach:
+- Correct handling of breakpoints for a &lt;something>-first approach:
   you do not include the qualifiers for this "something" in your markup.
 - How to add accessibility information in the markup (`aria` - Accessible Rich Internet Applications).
 - I'm starting to grasp how this whole "responsive" thing works;
