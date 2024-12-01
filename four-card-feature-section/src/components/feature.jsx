@@ -56,7 +56,7 @@ const Feature = ({ feature }) => {
           {columnLayout.map((column, columnIndex) => (
             <div key={columnIndex} className={`flex flex-col justify-evenly ${columnIndex === 1 ? "gap-4" : ""}`}>
               {column.map((card, cardIndex) => (
-                <Card key={cardIndex} index={`sm-${cardIndex}`} card={card} />
+                <Card key={cardIndex} index={`${columnIndex}-${cardIndex}`} card={card} />
               ))}
             </div>
           ))}
