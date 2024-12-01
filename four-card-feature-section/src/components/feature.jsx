@@ -10,17 +10,17 @@ const getColumnLayout = (cards, columnConfig) => {
   return layout;
 };
 
-const Card = ({ card }) => {
+const Card = ({ card, index }) => {
   const { title, text, image, color } = card;
 
   return (
-    <article className={"my-8 overflow-hidden rounded-xl text-left shadow-extra-large sm:my-2 sm:max-w-[350px]"} aria-labelledby={`card-title-${title}`}>
+    <article className={"my-8 overflow-hidden rounded-xl text-left shadow-extra-large sm:my-2 sm:max-w-[350px]"} aria-labelledby={`card-title-${index}`}>
       <div className={`left-0 h-1 bg-${color}`}></div>
       <section className={"p-8"}>
-        <h3 id={`card-title-${title}`} className={"text-xl font-bold"}>
+        <h2 id={`card-title-${index}`} className={"text-xl font-bold"}>
           {title}
-        </h3>
-        <p className={"pt-2 text-[14px] text-grayish-blue"}>{text}</p>
+        </h2>
+        <h3 className={"pt-2 text-[14px] text-grayish-blue"}>{text}</h3>
         <div className={"flex justify-end pt-8"}>
           <img src={image} alt={`Illustration for ${title}`} />
         </div>
@@ -48,7 +48,7 @@ const Feature = ({ feature }) => {
         <div className={"flex justify-evenly text-center sm:hidden"}>
           <div className={"max-w-[512px]"}>
             {cards.map((card, index) => (
-              <Card key={index} card={card} />
+              <Card key={index} index={`${index}`} card={card} />
             ))}
           </div>
         </div>
@@ -56,7 +56,7 @@ const Feature = ({ feature }) => {
           {columnLayout.map((column, columnIndex) => (
             <div key={columnIndex} className={`flex flex-col justify-evenly ${columnIndex === 1 ? "gap-4" : ""}`}>
               {column.map((card, cardIndex) => (
-                <Card key={cardIndex} card={card} />
+                <Card key={cardIndex} index={`sm-${cardIndex}`} card={card} />
               ))}
             </div>
           ))}
