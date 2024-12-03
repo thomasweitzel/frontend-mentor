@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 bg-very-light-gray p-0 font-barlow text-[13px];
+  }
+}
+
+@layer utilities {
+  .testimonial-bg {
+    background-image: url("../public/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 20%;
+  }
+  .mobile-grid {
+    grid-template-areas:
+      "daniel"
+      "jonathan"
+      "jeanette"
+      "patrick"
+      "kira";
+  }
+  .small-grid {
+    grid-template-areas:
+      "daniel daniel"
+      "jeanette jonathan"
+      "patrick patrick"
+      "kira kira";
+  }
+  .desktop-grid {
+    grid-template-areas:
+      "daniel daniel jonathan kira"
+      "jeanette patrick patrick kira";
+  }
+  .daniel {
+    grid-area: daniel;
+  }
+  .jonathan {
+    grid-area: jonathan;
+  }
+  .jeanette {
+    grid-area: jeanette;
+  }
+  .patrick {
+    grid-area: patrick;
+  }
+  .kira {
+    grid-area: kira;
+  }
+}
