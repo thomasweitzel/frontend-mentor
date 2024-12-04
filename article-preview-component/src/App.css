@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 bg-light-grayish-blue p-0 font-manrope text-[13px];
+  }
+}
+
+@layer utilities {
+  .share::before {
+    @apply absolute left-[84%] inline-block h-[30px] w-[30px] rotate-45 bg-very-dark-grayish-blue content-[''];
+  }
+}

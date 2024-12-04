@@ -11,3 +11,4 @@ I started the challenges on 2024-11-22 as a side project. My progress will be sl
 - [Product Preview Card](https://thomasweitzel.github.io/frontend-mentor/product-preview-card/dist/)
 - [Four Card Feature Section](https://thomasweitzel.github.io/frontend-mentor/four-card-feature-section/dist/)
 - [Testimonials Grid Section](https://thomasweitzel.github.io/frontend-mentor/testimonials-grid-section/dist/)
+- [Article Preview Component](https://thomasweitzel.github.io/frontend-mentor/article-preview-component/dist/)
