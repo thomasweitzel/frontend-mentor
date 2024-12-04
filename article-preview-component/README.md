@@ -42,10 +42,12 @@ Users should be able to:
 
 ### What I learned
 
-- How to use the grid layout effectively for several media breakpoints.
-- How to employ `grid-template-areas` and `grid-area` to arrange elements in a grid.
-- Use and positioning of a background image with CSS.
-- Using the flex layout for arranging elements within the testimonials.
+- Handling Media Query Changes Programmatically:
+  Learned how to listen to and react to media query changes in JavaScript using the window.matchMedia API and integrated this functionality into a React application with hooks (useState and useEffect).
+- Using React Hooks Effectively:
+  Explored practical use cases of useState and useEffect for managing state and side effects, specifically for responsive design and dynamic component rendering.
+- Creating and Styling a "Speech Bubble" Component:
+  Designed and implemented a custom "speech bubble" component using CSS. Gained insights from online resources (e.g., YouTube tutorials) to overcome challenges with styling and positioning. While the current solution works, it could benefit from further refinement for maintainability and elegance.
 
 ## Author
 
