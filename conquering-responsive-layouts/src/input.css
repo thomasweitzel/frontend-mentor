@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    :root {
+        --size: 16px; /* is default anyway */
+        font-size: var(--size);
+    }
+    * {
+        box-sizing: border-box;
+    }
+}
+
+@layer utilities {
+    kbd {
+        @apply text-white bg-slate-900 rounded-s p-0.5 shadow-md ring-1 ring-slate-900/25;
+    }
+
+    /* For the course */
+    .body-05 {
+        font-family: 'Roboto', sans-serif;
+    }
+}
