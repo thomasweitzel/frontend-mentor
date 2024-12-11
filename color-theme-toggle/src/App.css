@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+    --color-*: initial;
+    /* Default theme light */
+    --color-border:                 oklch(40% 0.00  90.0);
+    --color-background:             oklch(90% 0.05 200.0);
+    --color-article-background:     oklch(90% 0.10  25.0);
+    --color-heading:                oklch(30% 0.15  25.0);
+    --color-text:                   oklch(30% 0.00  90.0);
+}
+
+@layer base {
+    [data-theme="dark"] {
+        --color-border:             oklch(50% 0.00  90.0);
+        --color-background:         oklch(15% 0.00  90.0);
+        --color-article-background: oklch(20% 0.00  90.0);
+        --color-heading:            oklch(90% 0.00  90.0);
+        --color-text:               oklch(80% 0.00  90.0);
+    }
+}
+
+body {
+    background-color: var(--color-background);
+}

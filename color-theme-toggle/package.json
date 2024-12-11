@@ -1,0 +1,26 @@
+{
+  "name": "color-theme-toggle",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview",
+    "css:watch": "npx @tailwindcss/cli -i ./src/App.css -o ./src/generated-styles.css --watch",
+    "css:build": "npx @tailwindcss/cli -i ./src/App.css -o ./src/generated-styles.css --minify"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.2.0",
+    "@tailwindcss/cli": "^4.0.0-beta.6",
+    "date-fns": "^4.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0-beta.6"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.1.9",
+    "@rsbuild/plugin-react": "^1.1.0",
+    "tailwind-merge": "^2.5.5"
+  }
+}

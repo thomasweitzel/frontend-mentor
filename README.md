@@ -12,3 +12,4 @@ I started the challenges in November 2024 as a side project. My progress will be
 - [Four Card Feature Section](https://thomasweitzel.github.io/frontend-mentor/four-card-feature-section/dist/)
 - [Testimonials Grid Section](https://thomasweitzel.github.io/frontend-mentor/testimonials-grid-section/dist/)
 - [Article Preview Component](https://thomasweitzel.github.io/frontend-mentor/article-preview-component/dist/)
+- [Color Theme Toggle](https://thomasweitzel.github.io/frontend-mentor/color-theme-toggle/dist/)
