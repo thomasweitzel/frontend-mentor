@@ -11,7 +11,9 @@ handling, and integrates seamlessly with React.
 In this blog post, I’ll build a dark theme toggle in a React application using Tailwind CSS 4.0, explain why local
 storage is essential, and highlight how the current Tailwind 4.0 beta improves over 3.4.
 
-Here is how it should look like in both modes:
+You can have a look at the [live demo](https://thomasweitzel.github.io/frontend-mentor/color-theme-toggle/dist/) or
+the [project on GitHub](https://github.com/thomasweitzel/frontend-mentor/tree/main/color-theme-toggle). Here is how it
+should look like in both modes:
 
 ![Collage of Images of Page in Light and Dark Mode](assets/images/example.webp)
 
