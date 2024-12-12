@@ -67,7 +67,7 @@ body {
 ```
 
 The plan here is to set the `data-theme` attribute of the `<html>` element to `dark` when the dark mode is selected. If
-the `light` mode is used, the attribute is simply removed. Since we have two sets of colors in the CSS file, the default
+the `light` mode is used, the attribute is set to `light`. Since we have two sets of colors in the CSS file, the default
 set is selected when the attribute is absent or has another value than `dark`. If the attribute has the value `dark`,
 then the alternative color set is used:
 
@@ -86,64 +86,47 @@ The `src/component/card.jsx` file handles the dynamic toggling of the dark theme
 ### src/component/card.jsx
 
 ```jsx
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 
-const APPLICATION_NAME = "color-theme-concept";
+const APPLICATION_NAME = "color-theme-toggle";
 
 // Inline SVG so we can take advantage of currentColor (text-color)
 const SvgImage = ({ src }) => {
-  const svg = atob(src.split(",")[1]);
-  return <div dangerouslySetInnerHTML={{ __html: svg }} />;
+  const svgContent = atob(src.split(",")[1]);
+  return <div dangerouslySetInnerHTML={{ __html: svgContent }} />;
 };
 
 const Card = ({ card }) => {
-  const { darkIcon, lightIcon, heading, text } = card;
-  const [mode, setMode] = useState({ toggle: true, state: "light", icons: { dark: lightIcon, light: darkIcon } });
-  const setThemeFunction = (theme) => (prevMode) => ({ ...prevMode, state: theme })
+  const lightTheme = "light";
+  const darkTheme = "dark";
 
-  // Set initial theme based on localStorage
-  useEffect(() => {
-    const savedTheme = localStorage.getItem(APPLICATION_NAME);
-    switch (savedTheme) {
-      case "dark":
-        setMode(setThemeFunction(savedTheme));
-        document.documentElement.setAttribute("data-theme", savedTheme);
-        break;
-      default:
-        document.documentElement.removeAttribute("data-theme");
-    }
-  }, []);
+  const getDataTheme = (theme) => theme === darkTheme ? darkTheme : lightTheme;
+  const getToggledTheme = (theme) => theme === darkTheme ? lightTheme : darkTheme;
 
-  // Toggle between light and dark mode
-  const clickHandler = () => {
-    const { toggle, state } = mode;
-    const htmlElement = document.documentElement;
-    if (toggle) {
-      switch (state) {
-        case "light":
-          const darkMode = "dark";
-          setMode(setThemeFunction(darkMode));
-          htmlElement.setAttribute("data-theme", darkMode);
-          localStorage.setItem(APPLICATION_NAME, darkMode);
-          break;
-        case "dark":
-          const lightMode = "light";
-          setMode(setThemeFunction(lightMode));
-          htmlElement.removeAttribute("data-theme");
-          localStorage.removeItem(APPLICATION_NAME);
-          break;
-      }
-    }
+  const initialTheme = localStorage.getItem(APPLICATION_NAME) || lightTheme;
+  const [theme, setTheme] = useState(initialTheme);
+
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute("data-theme", getDataTheme(theme));
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const newTheme = getToggledTheme(theme);
+    setTheme(newTheme);
+    localStorage.setItem(APPLICATION_NAME, getDataTheme(newTheme));
   };
 
+  const { darkIcon, lightIcon, heading, text } = card;
+  const icons = { dark: lightIcon, light: darkIcon };
+
   return (
-    <div className={"flex min-h-screen min-w-full flex-col items-center justify-center"}>
-      <article className={"relative w-[80%] max-w-[500px] rounded-lg border border-border bg-article-background p-8 shadow-2xl text-text"}>
-        <div onClick={clickHandler} className={"absolute mr-8 mt-8 top-0 right-0 text-text/90 cursor-pointer w-6 h-6"}>
-          <SvgImage src={mode.icons[mode.state]} />
+    <div className="flex min-h-screen min-w-full flex-col items-center justify-center">
+      <article className="relative w-[80%] max-w-[500px] rounded-lg border border-border bg-article-background p-8 shadow-2xl text-text">
+        <div onClick={toggleTheme} className="absolute top-0 right-0 mr-8 mt-8 text-text/90 cursor-pointer w-6 h-6">
+          <SvgImage src={icons[theme]} />
         </div>
-        <h1 className={"text-2xl font-bold text-heading"}>{heading}</h1>
-        <p className={"py-8 text-text/90"}>{text}</p>
+        <h1 className="text-2xl font-bold text-heading">{heading}</h1>
+        <p className="py-8 text-text/90">{text}</p>
       </article>
     </div>
   );
@@ -157,41 +140,23 @@ export default Card;
 When the component mounts, it checks `localStorage` for a saved theme:
    
 ```jsx
-const savedTheme = localStorage.getItem(APPLICATION_NAME);
-switch (savedTheme) {
-  case "dark":
-    setMode(setThemeFunction(savedTheme));
-    document.documentElement.setAttribute("data-theme", savedTheme);
-    break;
-  default:
-    document.documentElement.removeAttribute("data-theme");
-}
+const initialTheme = localStorage.getItem(APPLICATION_NAME) || lightTheme;
+const [theme, setTheme] = useState(initialTheme);
 ```
 
-If no theme is saved, the light theme is used as the default.
+If no theme was saved, the light theme is used as the default.
 
 ## Toggle Theme Dynamically  
 
-The `clickHandler` function toggles between light and dark themes:
+The `toggleTheme` function toggles between light and dark themes:
 
 ```jsx
-switch (state) {
-  case "light":
-    const darkMode = "dark";
-    setMode(setThemeFunction(darkMode));
-    htmlElement.setAttribute("data-theme", darkMode);
-    localStorage.setItem(APPLICATION_NAME, darkMode);
-    break;
-  case "dark":
-    const lightMode = "light";
-    setMode(setThemeFunction(lightMode));
-    htmlElement.removeAttribute("data-theme");
-    localStorage.removeItem(APPLICATION_NAME);
-    break;
-}
+const newTheme = getToggledTheme(theme);
+setTheme(newTheme);
+localStorage.setItem(APPLICATION_NAME, getDataTheme(newTheme));
 ```
 
-- The `data-theme` attribute is added or removed from the `<html>` element.
+- The `data-theme` attribute is set for the `<html>` element.
 - `localStorage` is updated to persist the user's preference.
 
 ## Tailwind CSS 4.0 vs. previous versions
