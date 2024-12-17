@@ -44,25 +44,27 @@ as examples.
 @theme {
     --color-*: initial;
     /* Default theme light */
-    --color-border:                 oklch(40% 0.00  90.0);
-    --color-background:             oklch(90% 0.05 200.0);
-    --color-article-background:     oklch(90% 0.10  25.0);
-    --color-heading:                oklch(30% 0.15  25.0);
-    --color-text:                   oklch(30% 0.00  90.0);
+    --color-neutral-50:  oklch(0.147 0.004  49.250);
+    --color-neutral-100: oklch(0.216 0.006  56.043);
+    --color-neutral-200: oklch(0.268 0.007  34.298);
+    --color-neutral-300: oklch(0.374 0.010  67.558);
+    --color-neutral-400: oklch(0.444 0.011  73.639);
+   /* ... */
 }
 
 @layer base {
     [data-theme="dark"] {
-        --color-border:             oklch(50% 0.00  90.0);
-        --color-background:         oklch(15% 0.00  90.0);
-        --color-article-background: oklch(20% 0.00  90.0);
-        --color-heading:            oklch(90% 0.00  90.0);
-        --color-text:               oklch(80% 0.00  90.0);
+        --color-neutral-50:  oklch(0.985 0.001 106.423);
+        --color-neutral-100: oklch(0.970 0.001 106.424);
+        --color-neutral-200: oklch(0.923 0.003  48.717);
+        --color-neutral-300: oklch(0.869 0.005  56.366);
+        --color-neutral-400: oklch(0.709 0.010  56.259);
+        /* ... */
     }
 }
 
-body {
-    background-color: var(--color-background);
+:root {
+    background-color: var(--color-neutral-950);
 }
 ```
 
@@ -75,9 +77,9 @@ then the alternative color set is used:
 - Dark Theme: Dynamically overrides the light theme when the `data-theme="dark"` attribute is present on the
   `<html>` element.
 
-This approach is declarative and keeps theme-related styling in one place. We can now use the colors `border`,
-`background`, `article-background`, `heading`, or `text` with any of the color prefixes, like `bg-`, `text-`, or
-`border-`. Opacity is also built-in, we can use it like that: `text-heading/50`.
+This approach is declarative and keeps theme-related styling in one place. We can now use the colors `neutral-100`,
+`primary-200`, `ok-300`, `warn-400`, or `fail-500` with any of the color prefixes, like `bg-`, `text-`, or
+`border-`. Opacity is also built-in, we can use it like that: `text-primary-200/50`.
 
 ## Implementing the Theme Toggle in React
 
@@ -121,12 +123,20 @@ const Card = ({ card }) => {
 
   return (
     <div className="flex min-h-screen min-w-full flex-col items-center justify-center">
-      <article className="relative w-[80%] max-w-[500px] rounded-lg border border-border bg-article-background p-8 shadow-2xl text-text">
-        <div onClick={toggleTheme} className="absolute top-0 right-0 mr-8 mt-8 text-text/90 cursor-pointer w-6 h-6">
+      <article
+        className="relative w-[80%] max-w-[500px] rounded-lg border border-neutral-500 bg-neutral-900 p-8 shadow-2xl text-neutral-300">
+        <div onClick={toggleTheme} className="absolute top-0 right-0 mr-8 mt-8 cursor-pointer w-6 h-6">
           <SvgImage src={icons[theme]} />
         </div>
-        <h1 className="text-2xl font-bold text-heading">{heading}</h1>
-        <p className="py-8 text-text/90">{text}</p>
+        <h1 className="text-2xl font-bold text-primary-400">{heading}</h1>
+        <p className=" py-8">{text}</p>
+        <div className={"grid grid-cols-11 gap-[2px]"}>
+          {["neutral", "primary", "ok", "warn", "fail"].map((color, colorIndex) => (
+            ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"].map((tone, toneIndex) => (
+              <div key={`key-${colorIndex}-${toneIndex}`} className={`bg-${color}-${tone} m-0 p-0 h-8`}></div>
+            ))
+          ))}
+        </div>
       </article>
     </div>
   );
@@ -174,7 +184,7 @@ declarative.
 In Tailwind 3.4, you had to manually handle opacity with `rgb(var(--color-variable) / <alpha-value>)`. This required
 additional configuration for custom colors.
 
-Opacity is automatically integrated into colors in Tailwind 4.0. For example, `text-heading/50` adjusts the text
+Opacity is automatically integrated into colors in Tailwind 4.0. For example, `text-primary-200/50` adjusts the text
 color's opacity to 50% without requiring extra setup.
 
 ### Seamless Integration with React
