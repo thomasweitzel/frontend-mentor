@@ -15,7 +15,8 @@ const Card = ({ card }) => {
   const getDataTheme = (theme) => theme === darkTheme ? darkTheme : lightTheme;
   const getToggledTheme = (theme) => theme === darkTheme ? lightTheme : darkTheme;
 
-  const initialTheme = localStorage.getItem(APPLICATION_NAME) || lightTheme;
+  // Order of preferences: local storage first, then system preferences, defaults to light theme
+  const initialTheme = localStorage.getItem(APPLICATION_NAME) || (window.matchMedia("(prefers-color-scheme: dark)").matches ? darkTheme : lightTheme);
   const [theme, setTheme] = useState(initialTheme);
 
   useLayoutEffect(() => {
