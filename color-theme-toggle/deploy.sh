@@ -7,6 +7,7 @@ cd "$(dirname "$0")"
 rm -rf dist/
 
 # build website
+npm run css:build
 npm run build
 
 # synchronize to server
