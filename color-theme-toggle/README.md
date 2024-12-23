@@ -49,7 +49,7 @@ as examples.
     --color-neutral-200: oklch(0.268 0.007  34.298);
     --color-neutral-300: oklch(0.374 0.010  67.558);
     --color-neutral-400: oklch(0.444 0.011  73.639);
-   /* ... */
+    /* ... */
 }
 
 @layer base {
