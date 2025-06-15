@@ -76,3 +76,9 @@ This way, the font size will smoothly go from its max size at 1440px screen widt
 And you can do this with padding and margins as well. Anything really.
 
 Pretty cool!
+
+## [Kevin Powell](https://www.kevinpowell.co/) on CSS
+
+- [Is Tailwind Taking Over CSS?](https://www.youtube.com/watch?v=EC-ocX6lWNs)
+- CSS Survey Results 2023, e.g. [CSS Resources: Blogs & Magazines](https://2023.stateofcss.com/en-US/resources/#blogs_news_magazines)
+  - see [People](https://2023.stateofcss.com/en-US/resources/#people) on who to follow on the Internet
